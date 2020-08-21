@@ -4,7 +4,7 @@
 [ext_resource path="res://Tile.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 102.486, 102.974 )
+extents = Vector2( 36.204, 28.338 )
 
 [node name="Tile" type="Area2D"]
 scale = Vector2( 0.5, 0.5 )

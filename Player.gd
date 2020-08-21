@@ -34,3 +34,9 @@ func move_tween(dir):
 		position, position + inputs[dir] * tile_size,
 		0.5/speed, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	tween.start()
+
+
+func _on_Player_area_entered(area):
+	if area.name.find("Enemy") != -1:
+		area.queue_free()
+		
