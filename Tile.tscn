@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/SpriteSheet.png" type="Texture" id=1]
+[ext_resource path="res://Tile.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 102.486, 102.974 )
+
+[node name="Tile" type="Area2D"]
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 2 )
+
+[node name="Black" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1125, 0, 265, 265 )
+
+[node name="White" type="Sprite" parent="."]
+z_index = -1
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 265, 265 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+[connection signal="area_entered" from="." to="." method="_on_Tile_area_entered"]

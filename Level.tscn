@@ -1,0 +1,210 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Tile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=3]
+
+[node name="Level" type="Position2D"]
+
+[node name="1" type="Position2D" parent="."]
+position = Vector2( 500, 200 )
+
+[node name="1" parent="1" instance=ExtResource( 1 )]
+
+[node name="2" parent="1" instance=ExtResource( 1 )]
+position = Vector2( 128, -1.52588e-05 )
+
+[node name="3" parent="1" instance=ExtResource( 1 )]
+position = Vector2( 256, -1.52588e-05 )
+
+[node name="4" parent="1" instance=ExtResource( 1 )]
+position = Vector2( 384, -1.52588e-05 )
+
+[node name="5" parent="1" instance=ExtResource( 1 )]
+position = Vector2( 512, -1.52588e-05 )
+
+[node name="6" parent="1" instance=ExtResource( 1 )]
+position = Vector2( 640, -1.52588e-05 )
+
+[node name="7" parent="1" instance=ExtResource( 1 )]
+position = Vector2( 768, -1.52588e-05 )
+
+[node name="8" parent="1" instance=ExtResource( 1 )]
+position = Vector2( 896, -1.52588e-05 )
+
+[node name="9" parent="1" instance=ExtResource( 1 )]
+position = Vector2( 1024, -1.52588e-05 )
+
+[node name="10" parent="1" instance=ExtResource( 1 )]
+position = Vector2( 1152, -1.52588e-05 )
+
+[node name="2" type="Position2D" parent="."]
+position = Vector2( 500, 328 )
+
+[node name="1" parent="2" instance=ExtResource( 1 )]
+
+[node name="2" parent="2" instance=ExtResource( 1 )]
+position = Vector2( 128, -1.52588e-05 )
+
+[node name="3" parent="2" instance=ExtResource( 1 )]
+position = Vector2( 256, -1.52588e-05 )
+
+[node name="4" parent="2" instance=ExtResource( 1 )]
+position = Vector2( 384, -1.52588e-05 )
+
+[node name="5" parent="2" instance=ExtResource( 1 )]
+position = Vector2( 512, -1.52588e-05 )
+
+[node name="6" parent="2" instance=ExtResource( 1 )]
+position = Vector2( 640, -1.52588e-05 )
+
+[node name="7" parent="2" instance=ExtResource( 1 )]
+position = Vector2( 768, -1.52588e-05 )
+
+[node name="8" parent="2" instance=ExtResource( 1 )]
+position = Vector2( 896, -1.52588e-05 )
+
+[node name="9" parent="2" instance=ExtResource( 1 )]
+position = Vector2( 1024, -1.52588e-05 )
+
+[node name="10" parent="2" instance=ExtResource( 1 )]
+position = Vector2( 1152, -1.52588e-05 )
+
+[node name="3" type="Position2D" parent="."]
+position = Vector2( 500, 456 )
+
+[node name="1" parent="3" instance=ExtResource( 1 )]
+
+[node name="2" parent="3" instance=ExtResource( 1 )]
+position = Vector2( 128, -1.52588e-05 )
+
+[node name="3" parent="3" instance=ExtResource( 1 )]
+position = Vector2( 256, -1.52588e-05 )
+
+[node name="4" parent="3" instance=ExtResource( 1 )]
+position = Vector2( 384, -1.52588e-05 )
+
+[node name="5" parent="3" instance=ExtResource( 1 )]
+position = Vector2( 512, -1.52588e-05 )
+
+[node name="6" parent="3" instance=ExtResource( 1 )]
+position = Vector2( 640, -1.52588e-05 )
+
+[node name="7" parent="3" instance=ExtResource( 1 )]
+position = Vector2( 768, -1.52588e-05 )
+
+[node name="8" parent="3" instance=ExtResource( 1 )]
+position = Vector2( 896, -1.52588e-05 )
+
+[node name="9" parent="3" instance=ExtResource( 1 )]
+position = Vector2( 1024, -1.52588e-05 )
+
+[node name="10" parent="3" instance=ExtResource( 1 )]
+position = Vector2( 1152, -1.52588e-05 )
+
+[node name="4" type="Position2D" parent="."]
+position = Vector2( 500, 584 )
+
+[node name="1" parent="4" instance=ExtResource( 1 )]
+
+[node name="2" parent="4" instance=ExtResource( 1 )]
+position = Vector2( 128, -1.52588e-05 )
+
+[node name="3" parent="4" instance=ExtResource( 1 )]
+position = Vector2( 256, -1.52588e-05 )
+
+[node name="4" parent="4" instance=ExtResource( 1 )]
+position = Vector2( 384, -1.52588e-05 )
+
+[node name="5" parent="4" instance=ExtResource( 1 )]
+position = Vector2( 512, -1.52588e-05 )
+
+[node name="6" parent="4" instance=ExtResource( 1 )]
+position = Vector2( 640, -1.52588e-05 )
+
+[node name="7" parent="4" instance=ExtResource( 1 )]
+position = Vector2( 768, -1.52588e-05 )
+
+[node name="8" parent="4" instance=ExtResource( 1 )]
+position = Vector2( 896, -1.52588e-05 )
+
+[node name="9" parent="4" instance=ExtResource( 1 )]
+position = Vector2( 1024, -1.52588e-05 )
+
+[node name="10" parent="4" instance=ExtResource( 1 )]
+position = Vector2( 1152, -1.52588e-05 )
+
+[node name="5" type="Position2D" parent="."]
+position = Vector2( 500, 712 )
+
+[node name="1" parent="5" instance=ExtResource( 1 )]
+
+[node name="2" parent="5" instance=ExtResource( 1 )]
+position = Vector2( 128, -1.52588e-05 )
+
+[node name="3" parent="5" instance=ExtResource( 1 )]
+position = Vector2( 256, -1.52588e-05 )
+
+[node name="4" parent="5" instance=ExtResource( 1 )]
+position = Vector2( 384, -1.52588e-05 )
+
+[node name="5" parent="5" instance=ExtResource( 1 )]
+position = Vector2( 512, -1.52588e-05 )
+
+[node name="6" parent="5" instance=ExtResource( 1 )]
+position = Vector2( 640, -1.52588e-05 )
+
+[node name="7" parent="5" instance=ExtResource( 1 )]
+position = Vector2( 768, -1.52588e-05 )
+
+[node name="8" parent="5" instance=ExtResource( 1 )]
+position = Vector2( 896, -1.52588e-05 )
+
+[node name="9" parent="5" instance=ExtResource( 1 )]
+position = Vector2( 1024, -1.52588e-05 )
+
+[node name="10" parent="5" instance=ExtResource( 1 )]
+position = Vector2( 1152, -1.52588e-05 )
+
+[node name="6" type="Position2D" parent="."]
+position = Vector2( 500, 840 )
+
+[node name="1" parent="6" instance=ExtResource( 1 )]
+
+[node name="2" parent="6" instance=ExtResource( 1 )]
+position = Vector2( 128, -1.52588e-05 )
+
+[node name="3" parent="6" instance=ExtResource( 1 )]
+position = Vector2( 256, -1.52588e-05 )
+
+[node name="4" parent="6" instance=ExtResource( 1 )]
+position = Vector2( 384, -1.52588e-05 )
+
+[node name="5" parent="6" instance=ExtResource( 1 )]
+position = Vector2( 512, -1.52588e-05 )
+
+[node name="6" parent="6" instance=ExtResource( 1 )]
+position = Vector2( 640, -1.52588e-05 )
+
+[node name="7" parent="6" instance=ExtResource( 1 )]
+position = Vector2( 768, -1.52588e-05 )
+
+[node name="8" parent="6" instance=ExtResource( 1 )]
+position = Vector2( 896, -1.52588e-05 )
+
+[node name="9" parent="6" instance=ExtResource( 1 )]
+position = Vector2( 1024, -1.52588e-05 )
+
+[node name="10" parent="6" instance=ExtResource( 1 )]
+position = Vector2( 1152, -1.52588e-05 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 500, 200 )
+
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 884, 456 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1396, 200 )
+[connection signal="moved" from="Player" to="Enemy" method="_on_Player_moved"]
+[connection signal="moved" from="Player" to="Enemy2" method="_on_Player_moved"]
