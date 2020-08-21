@@ -206,6 +206,5 @@ position = Vector2( 884, 456 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1396, 200 )
-[connection signal="area_entered" from="Player" to="Player" method="_on_Player_area_entered"]
 [connection signal="moved" from="Player" to="Enemy" method="_on_Player_moved"]
 [connection signal="moved" from="Player" to="Enemy2" method="_on_Player_moved"]

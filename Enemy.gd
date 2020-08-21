@@ -16,3 +16,5 @@ func _on_Player_moved(direc):
 	else:
 		position += Vector2.UP * tile_size
 	count += 1
+
+
