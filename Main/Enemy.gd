@@ -7,14 +7,16 @@ var inputs = {"right": Vector2.RIGHT,
 			"down": Vector2.DOWN}
 var count = 0
 
+export (PoolVector2Array) var patrol_points
+export (bool) var loop = true
 
+func _ready():
+	print(patrol_points)
+	
 func _on_Player_moved(direc):
-	if count > 5:
+	if count > len(patrol_points):
 		count = 0
-	if count < 3 :
-		position += Vector2.DOWN * tile_size
-	else:
-		position += Vector2.UP * tile_size
+	position += Vector2(patrol_points[count])
 	count += 1
 
 
