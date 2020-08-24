@@ -7,6 +7,10 @@
 [ext_resource path="res://Sprites/Tiles/ColorSplash - tilebig.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Tiles/ColorSplash - Tile2.png" type="Texture" id=6]
 
+
+
+
+
 [resource]
 0/name = "1"
 0/texture = ExtResource( 6 )
