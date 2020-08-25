@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/Kennys/spritesheet_tilesRed.png" type="Texture" id=1]
+
+[node name="Switch" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1653.63, 470 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 491, 449, 110, 110 )
+
+[node name="ColorPath" type="Node2D" parent="."]
+
+[node name="p1" type="Position2D" parent="ColorPath"]
+position = Vector2( 1542.51, 470 )
+
+[node name="p2" type="Position2D" parent="ColorPath"]
+position = Vector2( 1448, 470 )
+
+[node name="p3" type="Position2D" parent="ColorPath"]
+position = Vector2( 1350.55, 470 )

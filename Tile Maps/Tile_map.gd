@@ -1,7 +1,7 @@
 extends TileMap
 
 #Keep adding enums as new characters are added
-enum TILE_CONTAINS { EMPTY = -1, PLAYER, ENEMY1, TEST,  BLANK}
+enum TILE_CONTAINS { EMPTY = -1, PLAYER, ENEMY1, TEST,  BLANK = 32}
 
 func _ready():
 	for child in get_children():
@@ -20,8 +20,6 @@ func request_move(pawn, direction):
 	print(cell_target)
 	print(get_cellv(cell_target))
 	var cell_target_type = get_cellv(cell_target)
-	print(cell_target_type)
-	print(TILE_CONTAINS.BLANK)
 	match cell_target_type:
 		TILE_CONTAINS.BLANK:
 			return update_pawn_position(pawn, cell_start, cell_target)

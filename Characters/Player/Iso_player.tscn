@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Characters/Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Kennys/spritesheet_tilesGreen.png" type="Texture" id=2]
+[ext_resource path="res://Characters/Player/Iso_player.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Isometric/isometric-PACK-2_20.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "bump"
@@ -16,7 +16,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.375274 ), Vector2( 0.5, 0.5 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 1, 0.75 ), Vector2( 1, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:position")
@@ -44,17 +44,15 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.25, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.3 ), Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.3 ), Vector2( 0.5, 0.5 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 1, 0.6 ), Vector2( 1, 1 ), Vector2( 1, 0.6 ), Vector2( 1, 1 ) ]
 }
 
 [node name="Player" type="Node2D"]
+position = Vector2( 85.38, 95.3314 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
-region_enabled = true
 region_rect = Rect2( 754, 449, 150, 150 )
 
 [node name="Tween" type="Tween" parent="."]
