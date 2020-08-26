@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Tile Maps/iso_tile_set.tres" type="TileSet" id=1]
 [ext_resource path="res://Characters/Player/Iso_player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tile Maps/Iso_Tile_Map.gd" type="Script" id=3]
 [ext_resource path="res://Items/Switch.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Items/ColorPath.tscn" type="PackedScene" id=5]
 
 [node name="Iso-Level" type="Node2D"]
 
@@ -21,3 +22,18 @@ z_index = 7
 
 [node name="Switch" parent="TileMap" instance=ExtResource( 4 )]
 position = Vector2( 673.519, 374.785 )
+
+[node name="ColorPath" parent="TileMap/Switch" instance=ExtResource( 5 )]
+
+[node name="Position2D" type="Position2D" parent="TileMap/Switch/ColorPath"]
+position = Vector2( 64, -81.9627 )
+
+[node name="Position2D2" type="Position2D" parent="TileMap/Switch/ColorPath"]
+position = Vector2( 123.835, -115.579 )
+
+[node name="Position2D3" type="Position2D" parent="TileMap/Switch/ColorPath"]
+position = Vector2( 179.962, -81.9627 )
+
+[node name="Position2D4" type="Position2D" parent="TileMap/Switch/ColorPath"]
+position = Vector2( 276.179, -43.3262 )
+[connection signal="switch_activated" from="TileMap/Switch" to="TileMap/Switch/ColorPath" method="_on_Switch_switch_activated"]

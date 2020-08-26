@@ -8,8 +8,13 @@ export var line_width: = 3
 export var triangle_color: = Color(0.722656, 0.908997, 1)
 
 var _active_point_index: = 0
+var tilemap
+var tiles
+var vals
+
 
 func _ready() -> void:
+	get_tiles()
 	if not Engine.editor_hint:
 		set_process(false)
 
@@ -69,3 +74,33 @@ func set_editor_process(value:bool) -> void:
 	if not Engine.editor_hint:
 		return
 	set_process(value)
+	
+func _on_Switch_switch_activated(status):
+	if(status):
+		print("activated")
+		change_color(true)
+	else:
+		print("deactivated")
+		change_color(false)
+		
+func get_tiles():
+	tilemap = get_parent().get_parent()
+	tiles = PoolVector2Array()
+	for child in get_children():
+		tiles.append(tilemap.world_to_map(child.get_global_position()))
+	vals = Array()
+	for tile in tiles:
+		vals.append(tilemap.get_cellv(tile))
+	print (vals)	
+
+func change_color(status):
+	if status:
+		for tile in tiles:
+			tilemap.set_cellv(tile, 4)
+	else:
+		var count = 0
+		for tile in tiles:
+			tilemap.set_cellv(tile, vals[count])
+			count += 1
+	
+	
