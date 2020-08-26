@@ -5,9 +5,8 @@ enum TILE_CONTAINS { EMPTY = -1, PLAYER, ENEMY1, TEST,  BLANK = 32}
 
 func _ready():
 	for child in get_children():
-		#set_cellv(world_to_map(child.position), child.type)
-		print(world_to_map(child.position))
-		print(cell_size)
+		#Center each child to the centre of the tile.
+		child.position = map_to_world(world_to_map(child.position))
 
 	
 func get_cell_pawn(coordinates):

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ColorSplash - Tile - Transparent.png-8017a659c7a042589fe7f191cdefaccf.stex"
+path="res://.import/ColorSplash - tilebig.png-e91174fe9611471831b0c2dd389b82b4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tiles/ColorSplash - Tile - Transparent.png"
-dest_files=[ "res://.import/ColorSplash - Tile - Transparent.png-8017a659c7a042589fe7f191cdefaccf.stex" ]
+source_file="res://Tiles/ColorSplash - tilebig.png"
+dest_files=[ "res://.import/ColorSplash - tilebig.png-e91174fe9611471831b0c2dd389b82b4.stex" ]
 
 [params]
 

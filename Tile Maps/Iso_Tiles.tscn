@@ -53,6 +53,8 @@
 [ext_resource path="res://Sprites/Isometric/isometric-PACK-2_34.png" type="Texture" id=51]
 [ext_resource path="res://Sprites/Isometric/isometric-PACK-2_65.png" type="Texture" id=52]
 
+
+
 [node name="Iso Tiles" type="Node2D"]
 
 [node name="Iso_01" type="Sprite" parent="."]
