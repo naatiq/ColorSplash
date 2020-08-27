@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ColorSplash"
+run/main_scene="res://Levels/Iso-Level.tscn"
 config/icon="res://icon.png"
 
 [display]

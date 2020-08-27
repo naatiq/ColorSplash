@@ -8,6 +8,7 @@ export var editor_process: = true setget set_editor_process
 export var line_color: = Color(0.228943, 0.710254, 0.945312)
 export var line_width: = 3
 export var triangle_color: = Color(0.722656, 0.908997, 1)
+export var tile_index = 4
 
 
 var _active_point_index: = 0
@@ -43,7 +44,7 @@ func _on_Switch_switch_activated(status):
 	if(status):
 		print("activated")
 		for tile in tiles:
-			tilemap.set_cellv(tile, 4)
+			tilemap.set_cellv(tile, tile_index)
 	else:
 		print("deactivated")
 		var count = 0
