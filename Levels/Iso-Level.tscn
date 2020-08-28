@@ -124,16 +124,19 @@ position = Vector2( -107.546, -106.426 )
 position = Vector2( -175.784, -141.021 )
 
 [node name="Position2D5" type="Position2D" parent="TileMap/Switch4/ColorPath"]
-position = Vector2( -239.032, -92.1546 )
+position = Vector2( -227.718, -177.007 )
 
 [node name="Position2D6" type="Position2D" parent="TileMap/Switch4/ColorPath"]
-position = Vector2( -175.784, -64 )
+position = Vector2( -175.784, -208.048 )
 
 [node name="Position2D7" type="Position2D" parent="TileMap/Switch4/ColorPath"]
-position = Vector2( -127.53, -31.4644 )
+position = Vector2( -107.546, -238.485 )
 
 [node name="Position2D8" type="Position2D" parent="TileMap/Switch4/ColorPath"]
-position = Vector2( -62.4448, -3.32617 )
+position = Vector2( -56.3095, -267.059 )
+
+[node name="Position2D9" type="Position2D" parent="TileMap/Switch4/ColorPath"]
+position = Vector2( 2.28882e-05, -300.562 )
 
 [node name="Player" parent="TileMap" instance=ExtResource( 2 )]
 position = Vector2( 256.171, 855.826 )
