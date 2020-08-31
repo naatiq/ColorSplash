@@ -3,12 +3,17 @@ extends Area2D
 #On Ready Var
 #Get the parent Grid
 onready var Grid = get_parent()
+var in_motion = false
+var input_direction = Vector2(0,0)
+var current_color = 'red'
 
 func _ready():
 	pass
 	
 func _process(delta):
-	var input_direction = get_input_direction()
+	if not in_motion:
+			input_direction = get_input_direction()
+		
 	if not input_direction:
 		return
 	update_look_direction(input_direction)
@@ -17,22 +22,24 @@ func _process(delta):
 	
 	if target_position:
 		move_to(target_position)
+		in_motion = true
 	else:
 		bump()
+		in_motion = false
 
 
 #used to get the direction of input based on player key press
 func get_input_direction():
-	if(Input.is_action_pressed('right')):
+	if Input.is_action_pressed('right'):
 		return Vector2(1.0,0)
 		
-	if(Input.is_action_pressed('left')):
+	if Input.is_action_pressed('left'):
 		return Vector2(-1.0,0)
 	
-	if(Input.is_action_pressed('up')):
+	if Input.is_action_pressed('up'):
 		return Vector2 (0,-1.0)
 	
-	if(Input.is_action_pressed('down')):
+	if Input.is_action_pressed('down'):
 		return Vector2(0, 1.0)
 	
 #used to update the direction of player based on movement direction
@@ -67,3 +74,62 @@ func bump():
 	$AnimationPlayer.play("bump")
 	yield($AnimationPlayer, "animation_finished")
 	set_process(true)
+
+
+func _on_Player_area_entered(area):
+	in_motion = false
+	
+	if area.is_in_group("Stoppers"):
+		in_motion = false
+	
+	if area.is_in_group("Vortex"):
+		in_motion = false
+		if current_color == 'yellow':
+			yield_animation_play('YellowToRed')
+		if current_color == 'green':
+			yield_animation_play('GreenToRed')
+		if current_color == 'blue':
+			yield_animation_play('BlueToRed')
+		current_color = 'red'
+		
+	
+	if area.is_in_group("YellowEnemies"):
+		in_motion = false
+		area.queue_free()
+		if current_color == 'red':
+			yield_animation_play("RedToYellow")
+		if current_color == 'blue':
+			yield_animation_play("BlueToYellow")
+		if current_color == 'green':
+			yield_animation_play("GreenToYellow")
+		current_color = 'yellow'
+	
+	if area.is_in_group("GreenEnemies"):
+		in_motion = false
+		area.queue_free()
+		if current_color == 'red':
+			yield_animation_play("RedToGreen")
+		if current_color == 'blue':
+			yield_animation_play("BlueToGreen")
+		if current_color == 'yellow':
+			yield_animation_play("YellowToGreen")
+		current_color = 'green'
+	
+	if area.is_in_group("BlueEnemies"):
+		in_motion = false
+		
+		area.queue_free()
+		if current_color == 'red':
+			yield_animation_play("RedToBlue")
+		if current_color == 'green':
+			yield_animation_play("GreenToBlue")
+		if current_color == 'yellow':
+			yield_animation_play("YellowToBlue")
+		current_color = 'blue'
+		
+func yield_animation_play(animation):
+	set_process(false)
+	$AnimationPlayer.play(animation)
+	yield($AnimationPlayer, "animation_finished")
+	set_process(true)
+	

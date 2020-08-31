@@ -5,7 +5,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 54.4907, 52.3087 )
 
-[node name="BlueEnemy" type="Area2D"]
+[node name="BlueEnemy" type="Area2D" groups=[
+"BlueEnemies",
+]]
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

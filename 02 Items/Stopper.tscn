@@ -5,7 +5,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 54.5051, 50.4949 )
 
-[node name="Stopper" type="Area2D"]
+[node name="Stopper" type="Area2D" groups=[
+"Stoppers",
+]]
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

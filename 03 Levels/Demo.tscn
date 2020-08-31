@@ -53,3 +53,4 @@ scale = Vector2( 0.75, 0.75 )
 [node name="Vortex3" parent="TileMap" instance=ExtResource( 7 )]
 position = Vector2( 80, 1360 )
 scale = Vector2( 0.75, 0.75 )
+[connection signal="area_entered" from="TileMap/Player" to="TileMap/Player" method="_on_Player_area_entered"]
