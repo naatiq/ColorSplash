@@ -6,6 +6,10 @@ onready var Grid = get_parent()
 var in_motion = false
 var input_direction = Vector2(0,0)
 var current_color = 'red'
+var up_pressed = false
+var down_pressed = false
+var right_pressed = false
+var left_pressed = false
 
 func _ready():
 	pass
@@ -25,21 +29,25 @@ func _process(delta):
 		in_motion = true
 	else:
 		bump()
+		up_pressed = false
+		down_pressed = false
+		right_pressed = false
+		left_pressed = false
 		in_motion = false
 
 
 #used to get the direction of input based on player key press
 func get_input_direction():
-	if Input.is_action_pressed('right'):
+	if Input.is_action_pressed('right') or right_pressed:
 		return Vector2(1.0,0)
 		
-	if Input.is_action_pressed('left'):
+	if Input.is_action_pressed('left') or left_pressed:
 		return Vector2(-1.0,0)
 	
-	if Input.is_action_pressed('up'):
+	if Input.is_action_pressed('up') or up_pressed:
 		return Vector2 (0,-1.0)
 	
-	if Input.is_action_pressed('down'):
+	if Input.is_action_pressed('down') or down_pressed:
 		return Vector2(0, 1.0)
 	
 #used to update the direction of player based on movement direction
@@ -78,6 +86,11 @@ func bump():
 
 func _on_Player_area_entered(area):
 	in_motion = false
+	up_pressed = false
+	down_pressed = false
+	right_pressed = false
+	left_pressed = false
+	
 	
 	if area.is_in_group("Stoppers"):
 		in_motion = false
@@ -133,3 +146,17 @@ func yield_animation_play(animation):
 	yield($AnimationPlayer, "animation_finished")
 	set_process(true)
 	
+func _on_Up_button_down():
+	up_pressed = true
+
+
+func _on_Down_button_down():
+	down_pressed = true
+	
+
+func _on_Left_button_down():
+	left_pressed = true
+
+
+func _on_Right_button_down():
+	right_pressed = true
