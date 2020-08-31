@@ -16,15 +16,16 @@ _global_script_class_icons={
 [application]
 
 config/name="ColorSplash"
-run/main_scene="res://Levels/Iso-Level.tscn"
+run/main_scene="res://03 Levels/Demo.tscn"
 config/icon="res://icon.png"
 
 [display]
 
-window/size/width=1920
-window/size/height=1080
-window/size/test_width=1280
-window/size/test_height=720
+window/size/width=1242
+window/size/height=2688
+window/size/test_width=310
+window/size/test_height=672
+window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -67,7 +68,3 @@ pointing/emulate_touch_from_mouse=true
 [rendering]
 
 environment/default_environment="res://default_env.tres"
-
-[world]
-
-2d/cell_size=256
