@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://05 Tile Maps/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://01 Characters/Player.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://01 Characters/Enemies/Enemy-Green.tscn" type="PackedScene" id=5]
 [ext_resource path="res://02 Items/Stopper.tscn" type="PackedScene" id=6]
 [ext_resource path="res://02 Items/Vortex.tscn" type="PackedScene" id=7]
-[ext_resource path="res://06 UI/SwipeDetector.tscn" type="PackedScene" id=8]
 
 [node name="Demo" type="Node2D"]
 
@@ -55,6 +54,48 @@ scale = Vector2( 0.75, 0.75 )
 position = Vector2( 77.1715, 1357.17 )
 scale = Vector2( 0.75, 0.75 )
 
-[node name="SwipeDetector" parent="." instance=ExtResource( 8 )]
+[node name="Up" type="Button" parent="."]
+margin_left = 417.292
+margin_top = 1849.69
+margin_right = 713.292
+margin_bottom = 2017.69
+text = "UP"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Down" type="Button" parent="."]
+margin_left = 438.673
+margin_top = 2088.45
+margin_right = 734.673
+margin_bottom = 2256.45
+text = "Down"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left" type="Button" parent="."]
+margin_left = 75.1868
+margin_top = 1963.73
+margin_right = 371.187
+margin_bottom = 2131.73
+text = "Left"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right" type="Button" parent="."]
+margin_left = 805.724
+margin_top = 1953.03
+margin_right = 1101.72
+margin_bottom = 2121.03
+text = "Right"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="area_entered" from="TileMap/Player" to="TileMap/Player" method="_on_Player_area_entered"]
-[connection signal="swiped" from="SwipeDetector" to="TileMap/Player" method="_on_SwipeDetector_swiped"]
+[connection signal="button_down" from="Up" to="TileMap/Player" method="_on_Up_button_down"]
+[connection signal="button_down" from="Down" to="TileMap/Player" method="_on_Down_button_down"]
+[connection signal="button_down" from="Left" to="TileMap/Player" method="_on_Left_button_down"]
+[connection signal="button_down" from="Right" to="TileMap/Player" method="_on_Right_button_down"]
