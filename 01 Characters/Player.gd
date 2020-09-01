@@ -6,17 +6,13 @@ onready var Grid = get_parent()
 var in_motion = false
 var input_direction = Vector2(0,0)
 var current_color = 'red'
-var up_pressed = false
-var down_pressed = false
-var right_pressed = false
-var left_pressed = false
 
 func _ready():
 	pass
 	
 func _process(delta):
-	if not in_motion:
-			input_direction = get_input_direction()
+#	if not in_motion:
+#			input_direction = get_input_direction()
 		
 	if not input_direction:
 		return
@@ -29,25 +25,21 @@ func _process(delta):
 		in_motion = true
 	else:
 		bump()
-		up_pressed = false
-		down_pressed = false
-		right_pressed = false
-		left_pressed = false
 		in_motion = false
 
 
 #used to get the direction of input based on player key press
 func get_input_direction():
-	if Input.is_action_pressed('right') or right_pressed:
+	if Input.is_action_pressed('right'):
 		return Vector2(1.0,0)
 		
-	if Input.is_action_pressed('left') or left_pressed:
+	if Input.is_action_pressed('left'):
 		return Vector2(-1.0,0)
 	
-	if Input.is_action_pressed('up') or up_pressed:
+	if Input.is_action_pressed('up'):
 		return Vector2 (0,-1.0)
 	
-	if Input.is_action_pressed('down') or down_pressed:
+	if Input.is_action_pressed('down'):
 		return Vector2(0, 1.0)
 	
 #used to update the direction of player based on movement direction
@@ -86,10 +78,7 @@ func bump():
 
 func _on_Player_area_entered(area):
 	in_motion = false
-	up_pressed = false
-	down_pressed = false
-	right_pressed = false
-	left_pressed = false
+	input_direction = Vector2(0,0)
 	
 	
 	if area.is_in_group("Stoppers"):
@@ -130,7 +119,6 @@ func _on_Player_area_entered(area):
 	
 	if area.is_in_group("BlueEnemies"):
 		in_motion = false
-		
 		area.queue_free()
 		if current_color == 'red':
 			yield_animation_play("RedToBlue")
@@ -145,18 +133,8 @@ func yield_animation_play(animation):
 	$AnimationPlayer.play(animation)
 	yield($AnimationPlayer, "animation_finished")
 	set_process(true)
-	
-func _on_Up_button_down():
-	up_pressed = true
 
 
-func _on_Down_button_down():
-	down_pressed = true
-	
-
-func _on_Left_button_down():
-	left_pressed = true
-
-
-func _on_Right_button_down():
-	right_pressed = true
+func _on_SwipeDetector_swiped(direction):
+	if not in_motion:
+			input_direction = -direction
