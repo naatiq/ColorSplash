@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ColorSplash"
-run/main_scene="res://03 Levels/Demo.tscn"
+run/main_scene="res://06 UI/Start.tscn"
 config/icon="res://icon.png"
 
 [display]
