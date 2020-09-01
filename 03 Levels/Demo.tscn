@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://05 Tile Maps/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://01 Characters/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,14 @@
 [ext_resource path="res://06 UI/SwipeDetector.tscn" type="PackedScene" id=8]
 [ext_resource path="res://06 UI/Background.png" type="Texture" id=9]
 [ext_resource path="res://03 Levels/Demo.gd" type="Script" id=10]
+[ext_resource path="res://02 Items/Switches/YellowSwitch.tscn" type="PackedScene" id=11]
+[ext_resource path="res://02 Items/Switches/BlueSwitch.tscn" type="PackedScene" id=12]
+[ext_resource path="res://04 Sprites/150x150/GreenPath.png" type="Texture" id=13]
+[ext_resource path="res://02 Items/Switches/GreenSwitch.tscn" type="PackedScene" id=14]
+[ext_resource path="res://02 Items/Exit.tscn" type="PackedScene" id=15]
+[ext_resource path="res://04 Sprites/150x150/BluePath.png" type="Texture" id=16]
+[ext_resource path="res://04 Sprites/150x150/YellowPath.png" type="Texture" id=17]
+[ext_resource path="res://06 UI/Button.tscn" type="PackedScene" id=18]
 
 [node name="Demo" type="Node2D"]
 script = ExtResource( 10 )
@@ -68,17 +76,116 @@ scale = Vector2( 0.75, 0.75 )
 position = Vector2( 557.37, 1336.49 )
 current = true
 
+[node name="YellowSwitch" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 68.6704, 705.223 )
+switch_color = "yellow"
+
+[node name="Route" type="Node2D" parent="TileMap/YellowSwitch"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="TileMap/YellowSwitch/Route"]
+position = Vector2( 161.634, 2.24493 )
+texture = ExtResource( 17 )
+
+[node name="Sprite2" type="Sprite" parent="TileMap/YellowSwitch/Route"]
+position = Vector2( 325.514, 2.24493 )
+texture = ExtResource( 17 )
+
+[node name="Sprite3" type="Sprite" parent="TileMap/YellowSwitch/Route"]
+position = Vector2( 323.269, 166.124 )
+texture = ExtResource( 17 )
+
+[node name="Sprite4" type="Sprite" parent="TileMap/YellowSwitch/Route"]
+position = Vector2( 325.514, 325.514 )
+texture = ExtResource( 17 )
+
+[node name="Sprite5" type="Sprite" parent="TileMap/YellowSwitch/Route"]
+position = Vector2( 484.904, 327.759 )
+texture = ExtResource( 17 )
+
+[node name="Sprite6" type="Sprite" parent="TileMap/YellowSwitch/Route"]
+position = Vector2( 646.538, 323.269 )
+texture = ExtResource( 17 )
+
+[node name="Sprite7" type="Sprite" parent="TileMap/YellowSwitch/Route"]
+position = Vector2( 808.173, 323.269 )
+texture = ExtResource( 17 )
+
+[node name="Sprite8" type="Sprite" parent="TileMap/YellowSwitch/Route"]
+position = Vector2( 803.683, 484.904 )
+texture = ExtResource( 17 )
+
+[node name="Sprite9" type="Sprite" parent="TileMap/YellowSwitch/Route"]
+position = Vector2( 808.173, 648.783 )
+texture = ExtResource( 17 )
+
+[node name="GreenSwitch" parent="TileMap" instance=ExtResource( 14 )]
+position = Vector2( 394.817, 1512.67 )
+switch_color = "green"
+
+[node name="Route" type="Node2D" parent="TileMap/GreenSwitch"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="TileMap/GreenSwitch/Route"]
+position = Vector2( 150.41, 0 )
+texture = ExtResource( 13 )
+
+[node name="Sprite2" type="Sprite" parent="TileMap/GreenSwitch/Route"]
+position = Vector2( 325.514, 2.245 )
+texture = ExtResource( 13 )
+
+[node name="Sprite3" type="Sprite" parent="TileMap/GreenSwitch/Route"]
+position = Vector2( 478.169, 2.245 )
+texture = ExtResource( 13 )
+
+[node name="BlueSwitch" parent="TileMap" instance=ExtResource( 12 )]
+position = Vector2( 1035.84, 547.284 )
+switch_color = "blue"
+
+[node name="Route" type="Node2D" parent="TileMap/BlueSwitch"]
+visible = false
+position = Vector2( 3.27417, 4.55957 )
+
+[node name="Sprite" type="Sprite" parent="TileMap/BlueSwitch/Route"]
+position = Vector2( -2.245, 163.879 )
+texture = ExtResource( 16 )
+
+[node name="Sprite2" type="Sprite" parent="TileMap/BlueSwitch/Route"]
+position = Vector2( -6.73438, 327.759 )
+texture = ExtResource( 16 )
+
+[node name="Sprite3" type="Sprite" parent="TileMap/BlueSwitch/Route"]
+position = Vector2( -8.97949, 484.904 )
+texture = ExtResource( 16 )
+
+[node name="Sprite4" type="Sprite" parent="TileMap/BlueSwitch/Route"]
+position = Vector2( -6.73438, 639.803 )
+texture = ExtResource( 16 )
+
+[node name="Sprite5" type="Sprite" parent="TileMap/BlueSwitch/Route"]
+position = Vector2( -6.73438, 808.173 )
+texture = ExtResource( 16 )
+
+[node name="Exit" parent="TileMap" instance=ExtResource( 15 )]
+visible = false
+position = Vector2( 1034.81, 1514.81 )
+
 [node name="SwipeDetector" parent="." instance=ExtResource( 8 )]
 
-[node name="Back" type="Button" parent="."]
-margin_left = 394.068
-margin_top = 2416.0
-margin_right = 687.068
-margin_bottom = 2535.0
+[node name="Restart" parent="." instance=ExtResource( 18 )]
+margin_left = 59.0
+margin_top = 2197.0
+margin_right = 448.0
+margin_bottom = 2452.0
+text = "RESTART"
+
+[node name="Back" parent="." instance=ExtResource( 18 )]
+margin_left = 598.0
+margin_top = 2204.0
+margin_right = 1028.0
+margin_bottom = 2447.0
 text = "BACK"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 [connection signal="area_entered" from="TileMap/Player" to="TileMap/Player" method="_on_Player_area_entered"]
 [connection signal="swiped" from="SwipeDetector" to="TileMap/Player" method="_on_SwipeDetector_swiped"]
+[connection signal="button_down" from="Restart" to="." method="_on_Restart_button_down"]
 [connection signal="button_down" from="Back" to="." method="_on_Back_button_down"]

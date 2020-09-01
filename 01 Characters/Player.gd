@@ -5,7 +5,7 @@ extends Area2D
 onready var Grid = get_parent()
 var in_motion = false
 var input_direction = Vector2(0,0)
-var current_color = 'red'
+var current_color = 'red' setget ,current_color_get
 
 func _ready():
 	pass
@@ -138,3 +138,6 @@ func yield_animation_play(animation):
 func _on_SwipeDetector_swiped(direction):
 	if not in_motion:
 			input_direction = -direction
+
+func current_color_get():
+	return current_color
