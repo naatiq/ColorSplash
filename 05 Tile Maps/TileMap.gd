@@ -13,6 +13,9 @@ func get_cell_pawn(coordinates):
 			return(node)
 			
 func request_move(pawn, direction):
+	if direction.length() == 0:
+		print('stop')
+		return
 	var cell_start = world_to_map(pawn.position)
 	var cell_target = cell_start + direction
 	return update_pawn_position(pawn, cell_start, cell_target)

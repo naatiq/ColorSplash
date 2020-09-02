@@ -4,7 +4,7 @@ signal swiped(direction)
 signal swiped_canceled(start_position)
 
 export(float, 1.0, 1.5) var MAX_DIAGONAL_SLOPE = 1.3
-export (float) var swipe_threshold = 0.1
+export (float) var SWIPE_THRESHOLD = 0.1
 
 onready var timer = $Timer
 var swipe_start_position = Vector2()
@@ -27,7 +27,11 @@ func _end_detection(position):
 #	print(direction)
 #	if abs(direction.x) + abs(direction.y) >= MAX_DIAGONAL_SLOPE:
 #		return
-		
+	print (position.distance_to(swipe_start_position))
+	if position.distance_to(swipe_start_position) < SWIPE_THRESHOLD:
+		print('tapped')
+		emit_signal('swiped', Vector2(0.0, 0.0))
+		return
 	if abs(direction.x) > abs(direction.y):
 		emit_signal('swiped', Vector2(-sign(direction.x), 0.0))
 	else:

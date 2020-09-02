@@ -40,5 +40,6 @@ text = "BACK"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="button_down" from="Replay" to="." method="_on_Replay_button_down"]
 [connection signal="button_down" from="Next" to="." method="_on_Next_button_down"]
 [connection signal="button_down" from="Back" to="." method="_on_Back_button_down"]

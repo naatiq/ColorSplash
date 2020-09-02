@@ -4,6 +4,7 @@
 
 [node name="SwipeDetector" type="Node"]
 script = ExtResource( 1 )
+SWIPE_THRESHOLD = 20.0
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

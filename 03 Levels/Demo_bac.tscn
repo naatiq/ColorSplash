@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://05 Tile Maps/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://01 Characters/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://01 Characters/Enemies/Enemy-Yellow.tscn" type="PackedScene" id=3]
 [ext_resource path="res://01 Characters/Enemies/Enemy-Blue.tscn" type="PackedScene" id=4]
 [ext_resource path="res://01 Characters/Enemies/Enemy-Green.tscn" type="PackedScene" id=5]
+[ext_resource path="res://02 Items/Stopper.tscn" type="PackedScene" id=6]
 [ext_resource path="res://02 Items/Vortex.tscn" type="PackedScene" id=7]
 [ext_resource path="res://06 UI/SwipeDetector.tscn" type="PackedScene" id=8]
 [ext_resource path="res://06 UI/Background.png" type="Texture" id=9]
@@ -42,6 +43,26 @@ position = Vector2( 232, 1040 )
 
 [node name="YellowEnemy" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 712, 1352 )
+
+[node name="Stopper" parent="TileMap" instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 720, 552 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Stopper2" parent="TileMap" instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 232, 560 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Stopper3" parent="TileMap" instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 72, 1200 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Stopper4" parent="TileMap" instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 712, 1032 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Vortex" parent="TileMap" instance=ExtResource( 7 )]
 position = Vector2( 1032, 880 )

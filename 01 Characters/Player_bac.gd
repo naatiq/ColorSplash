@@ -136,11 +136,8 @@ func yield_animation_play(animation):
 
 
 func _on_SwipeDetector_swiped(direction):
-	if direction.length() == 0:
-		input_direction = direction
-		in_motion = false
-	else:
-		input_direction = -direction
+	if not in_motion:
+			input_direction = -direction
 
 func current_color_get():
 	return current_color
