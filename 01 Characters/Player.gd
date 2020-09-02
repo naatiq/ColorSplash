@@ -22,6 +22,7 @@ func _process(delta):
 	
 	if target_position:
 		move_to(target_position)
+		input_direction = Vector2.ZERO
 		in_motion = true
 	else:
 		bump()
