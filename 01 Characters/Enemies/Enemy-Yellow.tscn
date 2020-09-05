@@ -1,29 +1,31 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://04 Sprites/150x150/Enemy2.png" type="Texture" id=1]
+[ext_resource path="res://04 Sprites/150p/Yellow.png" type="Texture" id=1]
+[ext_resource path="res://01 Characters/Enemies/Enemy-Yellow.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "walk"
-length = 0.4
+length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("Sprite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 54.4907, 52.3087 )
+extents = Vector2( 54.6351, 52.3087 )
 
 [node name="YellowEnemy" type="Area2D" groups=[
 "YellowEnemies",
 ]]
+script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

@@ -11,7 +11,7 @@ func _process(delta):
 
 
 func _on_Switch_area_entered(area):
-	print(area.current_color_get())
+
 	if area.name == "Player" and area.current_color_get() == switch_color: 
 		change_status()
 

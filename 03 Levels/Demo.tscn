@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://05 Tile Maps/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://01 Characters/Player.tscn" type="PackedScene" id=2]
@@ -8,7 +8,7 @@
 [ext_resource path="res://02 Items/ColorPath.tscn" type="PackedScene" id=6]
 [ext_resource path="res://02 Items/Vortex.tscn" type="PackedScene" id=7]
 [ext_resource path="res://06 UI/SwipeDetector.tscn" type="PackedScene" id=8]
-[ext_resource path="res://06 UI/Background.png" type="Texture" id=9]
+[ext_resource path="res://04 Sprites/150p/Left_Wall.png" type="Texture" id=9]
 [ext_resource path="res://03 Levels/Demo.gd" type="Script" id=10]
 [ext_resource path="res://02 Items/Switches/YellowSwitch.tscn" type="PackedScene" id=11]
 [ext_resource path="res://02 Items/Switches/BlueSwitch.tscn" type="PackedScene" id=12]
@@ -19,25 +19,29 @@
 [ext_resource path="res://04 Sprites/150x150/YellowPath.png" type="Texture" id=17]
 [ext_resource path="res://06 UI/Button.tscn" type="PackedScene" id=18]
 [ext_resource path="res://01 Characters/Enemies/Enemy-Blue.gd" type="Script" id=19]
+[ext_resource path="res://04 Sprites/150p/TopWall.png" type="Texture" id=20]
+[ext_resource path="res://04 Sprites/150p/Right_Wall.png" type="Texture" id=21]
+[ext_resource path="res://04 Sprites/150p/Down_wall.png" type="Texture" id=22]
+[ext_resource path="res://04 Sprites/150p/Door.png" type="Texture" id=23]
+[ext_resource path="res://04 Sprites/150p/Door_Open.png" type="Texture" id=25]
 
 [node name="Demo" type="Node2D"]
 script = ExtResource( 10 )
 
-[node name="Background" type="Sprite" parent="."]
-position = Vector2( 356.236, 1342.1 )
-scale = Vector2( 0.65, 0.65 )
-z_index = -10
-texture = ExtResource( 9 )
-
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
+cell_size = Vector2( 150, 150 )
 cell_tile_origin = 0
-tile_data = PoolIntArray( 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0 )
+tile_data = PoolIntArray( 65536, 2, 0, 65537, 1, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 1, 0, 65542, 2, 0, 131072, 1, 0, 131073, 1, 0, 131074, 2, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 196608, 1, 0, 196609, 2, 0, 196610, 1, 0, 196611, 2, 0, 196612, 2, 0, 196613, 1, 0, 196614, 1, 0, 262144, 2, 0, 262145, 2, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 2, 0, 327680, 2, 0, 327681, 1, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 1, 0, 327686, 2, 0, 393216, 2, 0, 393217, 1, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 2, 0, 458752, 2, 0, 458753, 2, 0, 458754, 1, 0, 458755, 1, 0, 458756, 2, 0, 458757, 1, 0, 458758, 2, 0, 524288, 2, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 2, 0, 589824, 2, 0, 589825, 2, 0, 589826, 2, 0, 589827, 2, 0, 589828, 2, 0, 589829, 2, 0, 589830, 2, 0, 655360, 1, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 720896, 2, 0, 720897, 2, 0, 720898, 1, 0, 720899, 2, 0, 720900, 2, 0, 720901, 1, 0, 720902, 1, 0, 786432, 1, 0, 786433, 1, 0, 786434, 1, 0, 786435, 2, 0, 786436, 1, 0, 786437, 1, 0, 786438, 1, 0, 851968, 2, 0, 851969, 2, 0, 851970, 2, 0, 851971, 2, 0, 851972, 2, 0, 851973, 2, 0, 851974, 2, 0, 917504, 1, 0, 917505, 1, 0, 917506, 1, 0, 917507, 1, 0, 917508, 1, 0, 917509, 1, 0, 917510, 1, 0, 983040, 1, 0, 983041, 1, 0, 983042, 1, 0, 983043, 1, 0, 983044, 1, 0, 983045, 1, 0, 983046, 1, 0, 1048576, 1, 0, 1048577, 1, 0, 1048578, 1, 0, 1048579, 1, 0, 1048580, 1, 0, 1048581, 1, 0, 1048582, 1, 0 )
 
 [node name="Player" parent="TileMap" instance=ExtResource( 2 )]
-position = Vector2( 72, 552 )
+position = Vector2( 117.357, 2018.55 )
 
 [node name="BlueEnemy" parent="TileMap" instance=ExtResource( 4 )]
-position = Vector2( 720, 880 )
+position = Vector2( 674.643, 822.044 )
+z_index = 4
+script = ExtResource( 19 )
+attack_length = 2
+attack_type = 1
 
 [node name="ColorPath" parent="TileMap/BlueEnemy" instance=ExtResource( 6 )]
 
@@ -64,31 +68,10 @@ position = Vector2( 143.745, -160.445 )
 [node name="Position2D8" type="Position2D" parent="TileMap/BlueEnemy/ColorPath"]
 position = Vector2( 9.05011, -146.975 )
 
-[node name="GreenEnemy" parent="TileMap" instance=ExtResource( 5 )]
-position = Vector2( 232, 1040 )
-
-[node name="ColorPath" parent="TileMap/GreenEnemy" instance=ExtResource( 6 )]
-
-[node name="Position2D" type="Position2D" parent="TileMap/GreenEnemy/ColorPath"]
-
-[node name="Position2D2" type="Position2D" parent="TileMap/GreenEnemy/ColorPath"]
-position = Vector2( 4.48999, -170.614 )
-
-[node name="Position2D3" type="Position2D" parent="TileMap/GreenEnemy/ColorPath"]
-position = Vector2( 8.97998, -314.289 )
-
-[node name="Position2D4" type="Position2D" parent="TileMap/GreenEnemy/ColorPath"]
-position = Vector2( 4.48999, -148.165 )
-
-[node name="Position2D5" type="Position2D" parent="TileMap/GreenEnemy/ColorPath"]
-position = Vector2( 4.48999, 26.9392 )
-
-[node name="Position2D6" type="Position2D" parent="TileMap/GreenEnemy/ColorPath"]
-position = Vector2( 4.48999, 188.573 )
-
 [node name="YellowEnemy" parent="TileMap" instance=ExtResource( 3 )]
-position = Vector2( 712, 1352 )
-script = ExtResource( 19 )
+position = Vector2( 684.282, 1256.24 )
+z_index = 4
+attack_type = 2
 
 [node name="ColorPath" parent="TileMap/YellowEnemy" instance=ExtResource( 6 )]
 
@@ -101,16 +84,46 @@ position = Vector2( -168.01, 16.9897 )
 position = Vector2( -315.254, 18.8776 )
 
 [node name="Position2D4" type="Position2D" parent="TileMap/YellowEnemy/ColorPath"]
-position = Vector2( -507.805, 22.6531 )
+position = Vector2( -470.007, 37.7721 )
 
 [node name="Position2D5" type="Position2D" parent="TileMap/YellowEnemy/ColorPath"]
-position = Vector2( -290.713, -5.66321 )
+position = Vector2( -459.542, 188.365 )
 
 [node name="Position2D6" type="Position2D" parent="TileMap/YellowEnemy/ColorPath"]
-position = Vector2( -173.673, -5.66321 )
+position = Vector2( -299.665, 183.325 )
+
+[node name="Position2D7" type="Position2D" parent="TileMap/YellowEnemy/ColorPath"]
+position = Vector2( -140.915, 178.285 )
+
+[node name="Position2D8" type="Position2D" parent="TileMap/YellowEnemy/ColorPath"]
+position = Vector2( 5.23566, 175.766 )
+
+[node name="GreenEnemy" parent="TileMap" instance=ExtResource( 5 )]
+position = Vector2( 215.029, 972.118 )
+z_index = 4
+
+[node name="ColorPath" parent="TileMap/GreenEnemy" instance=ExtResource( 6 )]
+
+[node name="Position2D" type="Position2D" parent="TileMap/GreenEnemy/ColorPath"]
+position = Vector2( 0, 4.24268 )
+
+[node name="Position2D2" type="Position2D" parent="TileMap/GreenEnemy/ColorPath"]
+position = Vector2( 11.561, -200.313 )
+
+[node name="Position2D3" type="Position2D" parent="TileMap/GreenEnemy/ColorPath"]
+position = Vector2( 8.97998, -314.289 )
+
+[node name="Position2D4" type="Position2D" parent="TileMap/GreenEnemy/ColorPath"]
+position = Vector2( 4.48999, -148.165 )
+
+[node name="Position2D5" type="Position2D" parent="TileMap/GreenEnemy/ColorPath"]
+position = Vector2( 56.8159, -2.75935 )
+
+[node name="Position2D6" type="Position2D" parent="TileMap/GreenEnemy/ColorPath"]
+position = Vector2( 17.2179, 184.33 )
 
 [node name="Vortex" parent="TileMap" instance=ExtResource( 7 )]
-position = Vector2( 1032, 880 )
+position = Vector2( 966.484, 822.044 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="Vortex2" parent="TileMap" instance=ExtResource( 7 )]
@@ -188,7 +201,7 @@ position = Vector2( 478.169, 2.245 )
 texture = ExtResource( 13 )
 
 [node name="BlueSwitch" parent="TileMap" instance=ExtResource( 12 )]
-position = Vector2( 1035.84, 547.284 )
+position = Vector2( 970.324, 532.165 )
 switch_color = "blue"
 
 [node name="Route" type="Node2D" parent="TileMap/BlueSwitch"]
@@ -216,7 +229,6 @@ position = Vector2( -6.73438, 808.173 )
 texture = ExtResource( 16 )
 
 [node name="Exit" parent="TileMap" instance=ExtResource( 15 )]
-visible = false
 position = Vector2( 1034.81, 1514.81 )
 
 [node name="SwipeDetector" parent="." instance=ExtResource( 8 )]
@@ -234,7 +246,45 @@ margin_top = 2204.0
 margin_right = 1028.0
 margin_bottom = 2447.0
 text = "BACK"
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Left_Wall" type="Sprite" parent="Props"]
+position = Vector2( -53.6262, 1329.64 )
+scale = Vector2( 1, 1.33307 )
+texture = ExtResource( 9 )
+
+[node name="Right_Wall" type="Sprite" parent="Props"]
+position = Vector2( 1103.71, 1328.75 )
+scale = Vector2( 1.06201, 1.33911 )
+texture = ExtResource( 21 )
+
+[node name="TopWall" type="Sprite" parent="Props"]
+position = Vector2( 526.96, 35.4109 )
+scale = Vector2( 1.04055, 1.26278 )
+texture = ExtResource( 20 )
+
+[node name="Down_wall" type="Sprite" parent="Props"]
+position = Vector2( 519.034, 2619.13 )
+scale = Vector2( 1.03717, 1 )
+texture = ExtResource( 22 )
+
+[node name="Door_Open" type="Sprite" parent="Props"]
+position = Vector2( 495.689, 44.0749 )
+scale = Vector2( 0.750241, 0.626476 )
+texture = ExtResource( 25 )
+
+[node name="Door" type="Sprite" parent="Props"]
+position = Vector2( 488.819, 37.3296 )
+scale = Vector2( 1, 0.914214 )
+texture = ExtResource( 23 )
 [connection signal="area_entered" from="TileMap/Player" to="TileMap/Player" method="_on_Player_area_entered"]
+[connection signal="attack_ice" from="TileMap/BlueEnemy" to="." method="_on_BlueEnemy_attack_ice"]
+[connection signal="start_ice" from="TileMap/BlueEnemy" to="." method="_on_BlueEnemy_start_ice"]
+[connection signal="attack_lava" from="TileMap/YellowEnemy" to="." method="_on_YellowEnemy_attack_lava"]
+[connection signal="start_lava" from="TileMap/YellowEnemy" to="." method="_on_YellowEnemy_start_lava"]
+[connection signal="attack_slime" from="TileMap/GreenEnemy" to="." method="_on_GreenEnemy_attack_slime"]
+[connection signal="start_slime" from="TileMap/GreenEnemy" to="." method="_on_GreenEnemy_start_slime"]
 [connection signal="swiped" from="SwipeDetector" to="TileMap/Player" method="_on_SwipeDetector_swiped"]
 [connection signal="button_down" from="Restart" to="." method="_on_Restart_button_down"]
 [connection signal="button_down" from="Back" to="." method="_on_Back_button_down"]

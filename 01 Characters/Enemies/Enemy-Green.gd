@@ -1,7 +1,7 @@
 extends "res://01 Characters/Enemies/Enemy.gd"
 
-signal start_ice(position)
-signal attack_ice(positions)
+signal start_slime(position)
+signal attack_slime(positions)
 
 export var attack_length = 3
 export var area_length = 2
@@ -24,9 +24,9 @@ var diag_diections = {'topright': Vector2(1,-1),
 
 func _ready():
 	randomize()
-
+	
 func update_trails(current_index):
-	 emit_signal("start_ice", points[current_index])
+	 emit_signal("start_slime", points[current_index])
 
 func attack():
 	
@@ -39,7 +39,7 @@ func attack():
 			ATTACK_TYPE.DIAGONAL:
 				calculate_diagonal_positions()
 				
-		emit_signal("attack_ice", attack_positions)
+		emit_signal("attack_slime", attack_positions)
 
 func calculate_linear_positions():
 	attack_positions.resize(0)
@@ -57,7 +57,7 @@ func calculate_area_positions():
 			if not (i ==  0 and j == 0):
 				var append_vector = Vector2(i,j)
 				attack_positions.append(get_global_position() + Grid.cell_size.x * append_vector)
-				
+
 func calculate_diagonal_positions():
 	attack_positions.resize(0)
 	attack_positions.append(get_global_position())
