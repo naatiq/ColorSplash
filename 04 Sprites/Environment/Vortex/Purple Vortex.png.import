@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/magma-4.png-f7fdfc8035e526800231f4733fe1aba1.stex"
+path="res://.import/Purple Vortex.png-d9856bd40f8a2709b18674ee3b07bc6a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://04 Sprites/Environment/Lava/magma-4.png"
-dest_files=[ "res://.import/magma-4.png-f7fdfc8035e526800231f4733fe1aba1.stex" ]
+source_file="res://04 Sprites/Environment/Vortex/Purple Vortex.png"
+dest_files=[ "res://.import/Purple Vortex.png-d9856bd40f8a2709b18674ee3b07bc6a.stex" ]
 
 [params]
 

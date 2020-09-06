@@ -6,7 +6,7 @@
 [ext_resource path="res://01 Characters/Enemies/Enemy-Blue.tscn" type="PackedScene" id=4]
 [ext_resource path="res://01 Characters/Enemies/Enemy-Green.tscn" type="PackedScene" id=5]
 [ext_resource path="res://02 Items/ColorPath.tscn" type="PackedScene" id=6]
-[ext_resource path="res://02 Items/Vortex.tscn" type="PackedScene" id=7]
+[ext_resource path="res://02 Items/Environment/Vortex.tscn" type="PackedScene" id=7]
 [ext_resource path="res://06 UI/SwipeDetector.tscn" type="PackedScene" id=8]
 [ext_resource path="res://04 Sprites/150p/Left_Wall.png" type="Texture" id=9]
 [ext_resource path="res://03 Levels/Demo.gd" type="Script" id=10]
@@ -41,7 +41,8 @@ position = Vector2( 674.643, 822.044 )
 z_index = 4
 script = ExtResource( 19 )
 attack_length = 2
-attack_type = 1
+attack_probability = 0.1
+attack_type = 2
 
 [node name="ColorPath" parent="TileMap/BlueEnemy" instance=ExtResource( 6 )]
 
@@ -71,6 +72,7 @@ position = Vector2( 9.05011, -146.975 )
 [node name="YellowEnemy" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 684.282, 1256.24 )
 z_index = 4
+attack_length = 1
 attack_type = 2
 
 [node name="ColorPath" parent="TileMap/YellowEnemy" instance=ExtResource( 6 )]
@@ -101,6 +103,7 @@ position = Vector2( 5.23566, 175.766 )
 [node name="GreenEnemy" parent="TileMap" instance=ExtResource( 5 )]
 position = Vector2( 215.029, 972.118 )
 z_index = 4
+attack_length = 1
 
 [node name="ColorPath" parent="TileMap/GreenEnemy" instance=ExtResource( 6 )]
 
@@ -124,15 +127,15 @@ position = Vector2( 17.2179, 184.33 )
 
 [node name="Vortex" parent="TileMap" instance=ExtResource( 7 )]
 position = Vector2( 966.484, 822.044 )
-scale = Vector2( 0.75, 0.75 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Vortex2" parent="TileMap" instance=ExtResource( 7 )]
-position = Vector2( 720, 1520 )
-scale = Vector2( 0.75, 0.75 )
+position = Vector2( 832.986, 1432.01 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Vortex3" parent="TileMap" instance=ExtResource( 7 )]
-position = Vector2( 77.1715, 1357.17 )
-scale = Vector2( 0.75, 0.75 )
+position = Vector2( 77.1715, 1575 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Camera2D" type="Camera2D" parent="TileMap"]
 position = Vector2( 557.37, 1336.49 )
